@@ -37,3 +37,16 @@ div.control{
 input.control--slider{
   width: 85%;
 }
+
+div#resultStars{
+
+    & svg{
+      vertical-align: top;
+    }
+
+    & span{
+      margin: 0;
+      padding: 0;
+    }
+
+}
