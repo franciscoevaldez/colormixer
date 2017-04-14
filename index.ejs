@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>RGB</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="HandheldFriendly" content="true" />
+
+	<link href="css/main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="status--playing">
+
+	<div id="container">
+
+		<div id="workarea">
+
+			<div id="mixcontainer">
+
+				<div id="bars">
+					<div class="bar bar--red"></div>
+					<div class="bar bar--green"></div>
+					<div class="bar bar--blue"></div>
+					<div class="bar bar--red"></div>
+					<div class="bar bar--green"></div>
+					<div class="bar bar--blue"></div>
+					<div class="bar bar--red"></div>
+					<div class="bar bar--green"></div>
+					<div class="bar bar--blue"></div>
+					<div class="bar bar--red"></div>
+					<div class="bar bar--green"></div>
+					<div class="bar bar--blue"></div>
+				</div>
+
+			</div>
+
+		</div>
+
+		<div id="controls">
+
+			<div id="colorPicker">
+
+				<div class="control control--red">
+					<input class="control--slider" type="range" name="slider--red" id="slider--red" value="255" min="0" max="255">
+				</div>
+
+				<div class="control control--green">
+					<input class="control--slider" type="range" name="slider--green" id="slider--green" value="255" min="0" max="255">
+				</div>
+
+				<div class="control control--blue">
+					<input class="control--slider" type="range" name="slider--blue" id="slider--blue" value="255" min="0" max="255">
+				</div>
+
+				<div class="control menu">
+					<a href="#" id="btn__new">Nuevo</a>
+					<a href="#" id="btn__compare">Verificar</a>
+				</div>
+
+			</div>
+
+			<div id="colorResult">
+				<h1>Tu resultado:</h1>
+				<p id="resultP">####</p>
+				<a href="#" id="btn__restart">Nuevo color</a>
+				<a href="#" id="btn__retry">Reintentar</a>
+			</div>
+
+		</div>
+
+	</div>
+
+	<script src="js/jquery.js"></script>
+
+	<script src="js/rgb.js"></script>
+
+	<script>
+
+		var targetRGB, userRGB,
+				targetLAB, userLAB,
+				deltaE;
+
+		var status = "playing";
+
+		var sliderR = document.getElementById("slider--red"),
+				sliderG = document.getElementById("slider--green"),
+				sliderB = document.getElementById("slider--blue");
+
+		function getNewTargetColor(){
+			targetRGB = getRandomColor()
+			targetLAB = getLABfromRGBobject(targetRGB);
+      $("#workarea").css('background-color', 'rgb(' + targetRGB.red + ',' + targetRGB.green + ',' + targetRGB.blue + ')')
+		}
+
+		function changeToState(newState){
+
+			$('body').removeClass("status--playing")
+			$('body').removeClass("status--result")
+
+			if(newState == "playing"){
+				$('body').addClass("status--playing")
+			}
+
+			if(newState == "result"){
+				$('body').addClass("status--result");
+				setupResultFor(deltaE);
+			}
+
+		}
+
+		function setupResultFor(newDelta){
+
+			var resultContainer = document.getElementById('resultP');
+
+			resultContainer.innerHTML = newDelta;
+
+		}
+
+		$("#slider--red").change(function() {
+		    var newValue = this.value;
+		    $('.bar--red').css('opacity', newValue/255);
+		});
+		$("#slider--green").change(function() {
+		    var newValue = this.value;
+		    $('.bar--green').css('opacity', newValue/255);
+		});
+		$("#slider--blue").change(function() {
+		    var newValue = this.value;
+		    $('.bar--blue').css('opacity', newValue/255);
+		});
+
+    $("#btn__new").click(getNewTargetColor)
+
+		$("#btn__compare").click(function(){
+
+			userRGB = {
+				red : sliderR.value,
+				green : sliderG.value,
+				blue : sliderB.value
+			};
+
+			userLAB = getLABfromRGBobject(userRGB);
+			deltaE = getDeltaEforPair(targetLAB, userLAB);
+			changeToState("result");
+
+    })
+
+		$("#btn__retry").click(function(){
+			changeToState("playing");
+		})
+
+		$("#btn__restart").click(function(){
+			getNewTargetColor()
+			changeToState("playing");
+		})
+
+		getNewTargetColor()
+
+	</script>
+
+</body>
+</html>
