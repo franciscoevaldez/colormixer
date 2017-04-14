@@ -1,0 +1,28 @@
+/* Status */
+.status{
+
+  &--playing{
+
+    & div#colorResult{
+      display: none;
+    }
+
+    & div#colorPicker{
+      display: block;
+    }
+
+  }
+
+  &--result{
+
+    & div#colorResult{
+      display: block;
+    }
+
+    & div#colorPicker{
+      display: none;
+    }
+
+  }
+
+}
