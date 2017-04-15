@@ -1,0 +1,49 @@
+div#container {
+    display: flex;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    flex-direction: column;
+    position: absolute;
+}
+
+div#workarea {
+    flex-grow: 2;
+    background: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div#mixcontainer {
+    width: 13em;
+    height: 13em;
+    display: flex;
+    background: black;
+    justify-content: center;
+    align-items: center;
+}
+
+div#mixer {
+    display: flex;
+    flex-direction: column;
+    width: 140px;
+    height: 140px;
+}
+
+div#bars{
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  height: 90%;
+
+  & div.bar{
+    flex-grow: 1;
+
+    &--red{background-color: #F00;}
+    &--green{background-color: #0F0;}
+    &--blue{background-color: #00F;}
+  }
+
+}

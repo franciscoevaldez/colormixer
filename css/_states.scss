@@ -1,0 +1,52 @@
+/* Status */
+.status{
+
+  &--playing{
+
+    & .result{
+      display: none;
+    }
+
+    & .picker{
+      display: flex;
+    }
+
+  }
+
+  &--result{
+
+    & .result{
+      display: block;
+    }
+
+    & .picker{
+      display: none;
+    }
+
+  }
+
+}
+
+body.result{
+
+  &--stars .result{
+    &__number{
+      display: none;
+    }
+
+    &__stars{
+      display: block;
+    }
+  }
+
+  &--number .result{
+    &__number{
+      display: block;
+    }
+
+    &__stars{
+      display: none;
+    }
+  }
+
+}

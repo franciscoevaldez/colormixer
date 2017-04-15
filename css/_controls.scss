@@ -1,0 +1,28 @@
+div#controls{
+  height: 10em;
+  border-top: 3pt solid black;
+  display: block;
+  padding-top: 0.6em;
+  text-align: center;
+
+  & h1{
+    font-size: 1em;
+    margin: 1em 0 0.1em 0;
+  }
+
+  & p{
+    font-size: 1.5em;
+    margin: 0.5em 0 1em;
+  }
+
+  & a{
+    color: #CCC;
+    border: 1px solid #ccc;
+    border-radius: 0.25em;
+    padding: 0.5em 0.75em;
+    text-decoration: none;
+    margin: 0 0.5em;
+    display: inline-block;
+  }
+
+}

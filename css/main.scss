@@ -1,0 +1,23 @@
+body{
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  color: white;
+  font-family: "Arial", sans-serif;
+}
+
+div#content{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+}
+
+@import "workarea.scss";
+@import "controls.scss";
+@import "states.scss";
+@import "ranges.scss";
+@import "stars.scss";
+@import "colorpicker.scss";
+@import "results.scss";

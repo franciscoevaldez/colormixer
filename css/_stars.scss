@@ -1,0 +1,81 @@
+/* Stars rating styles */
+
+/* Active: FCD616
+   Inactive: 332509 */
+
+.star{
+  fill: #FCD616;
+}
+.star--inactive{
+  fill: #332509;
+}
+
+body.rating--0,
+body.rating--1,
+body.rating--2,
+body.rating--3,
+body.rating--4
+{
+  .star{fill: #332509;}
+}
+
+body.rating--5,
+body.rating--6,
+body.rating--7,
+body.rating--8,
+body.rating--9
+{
+  .star{fill: #FCD616;}
+}
+
+body.rating--0{
+  & .star--0{fill: #FCD616;}
+}
+
+body.rating--1{
+  & .star--0{fill: #FCD616;}
+  & .star--1{fill: #FCD616;}
+}
+
+body.rating--2{
+  & .star--0{fill: #FCD616;}
+  & .star--1{fill: #FCD616;}
+  & .star--2{fill: #FCD616;}
+}
+
+body.rating--3{
+  & .star--0{fill: #FCD616;}
+  & .star--1{fill: #FCD616;}
+  & .star--2{fill: #FCD616;}
+  & .star--3{fill: #FCD616;}
+}
+
+body.rating--4{
+  & .star--0{fill: #FCD616;}
+  & .star--1{fill: #FCD616;}
+  & .star--2{fill: #FCD616;}
+  & .star--3{fill: #FCD616;}
+  & .star--4{fill: #FCD616;}
+}
+
+body.rating--8{
+  & .star--9{fill: #332509;}
+}
+
+body.rating--7{
+  & .star--9{fill: #332509;}
+  & .star--8{fill: #332509;}
+}
+
+body.rating--6{
+  & .star--9{fill: #332509;}
+  & .star--8{fill: #332509;}
+  & .star--7{fill: #332509;}
+}
+
+body.rating--5{
+  & .star--9{fill: #332509;}
+  & .star--8{fill: #332509;}
+  & .star--7{fill: #332509;}
+  & .star--6{fill: #332509;}
+}
