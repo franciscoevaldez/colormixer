@@ -1,7 +1,7 @@
 /* Hide range sliders */
 input[type=range] {
   -webkit-appearance: none;
-  width: 95%;
+  width: 100%;
   margin: 14px 0;
   background-color: #000;
 }
@@ -96,52 +96,4 @@ input[type=range]:focus::-ms-fill-lower {
 
 input[type=range]:focus::-ms-fill-upper {
   background: #b3b3b3;
-}
-
-/* red track */
-.control--red input[type=range]::-webkit-slider-runnable-track {
-    background: -webkit-linear-gradient(left, #300 0%, #F00 100%);
-    background: -o-linear-gradient(left, #300 0%, #F00 100%);
-    background: linear-gradient(to right, #300 0%, #F00 100%);
-}
-.control--red input[type=range]::-moz-range-track {
-  background: #F00;
-}
-.control--red input[type=range]::-ms-fill-upper {
-  background: #F00;
-}
-.control--red input[type=range]:focus::-ms-fill-lower {
-  background: #F00;
-}
-
-/* green track */
-.control--green input[type=range]::-webkit-slider-runnable-track {
-  background: -webkit-linear-gradient(left, #030 0%, #0F0 100%);
-  background: -o-linear-gradient(left, #030 0%, #0F0 100%);
-  background: linear-gradient(to right, #030 0%, #0F0 100%);
-}
-.control--green input[type=range]::-moz-range-track {
-  background: #0F0;
-}
-.control--green input[type=range]::-ms-fill-upper {
-  background: #0F0;
-}
-.control--green input[type=range]:focus::-ms-fill-lower {
-  background: #0F0;
-}
-
-/* blue track */
-.control--blue input[type=range]::-webkit-slider-runnable-track {
-  background: -webkit-linear-gradient(left, #003 0%, #00F 100%);
-  background: -o-linear-gradient(left, #003 0%, #00F 100%);
-  background: linear-gradient(to right, #003 0%, #00F 100%);
-}
-.control--blue input[type=range]::-moz-range-track {
-  background: #00F;
-}
-.control--blue input[type=range]::-ms-fill-upper {
-  background: #00F;
-}
-.control--blue input[type=range]:focus::-ms-fill-lower {
-  background: #00F;
 }

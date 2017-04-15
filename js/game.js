@@ -2,7 +2,8 @@ var targetRGB, userRGB,
     targetLAB, userLAB,
     deltaE;
 
-var status = "playing";
+var status = "playing",
+    visualization = 'stars';
 
 var sliderR = document.getElementById("slider--red"),
     sliderG = document.getElementById("slider--green"),
@@ -30,10 +31,68 @@ function changeToState(newState){
 
 }
 
+function gradeDelta(newDelta){
+
+  var newClass, newMessage;
+
+  if (newDelta < 1) {
+    newClass="rating--9";
+    newMessage="Excelente";
+  } else if (newDelta < 2.2) {
+    newClass="rating--8";
+    newMessage="Excelente";
+  } else if (newDelta < 5) {
+    newClass="rating--7";
+    newMessage="Muy bueno";
+  } else if (newDelta < 8) {
+    newClass="rating--6";
+    newMessage="Muy bueno";
+  } else if (newDelta < 12) {
+    newClass="rating--5";
+    newMessage="Aceptable";
+  } else if (newDelta < 18) {
+    newClass="rating--4";
+    newMessage="Aceptable";
+  } else if (newDelta < 25) {
+    newClass="rating--3";
+    newMessage="Pobre";
+  } else if (newDelta < 35) {
+    newClass="rating--2";
+    newMessage="Pobre";
+  } else if (newDelta < 50) {
+    newClass="rating--1";
+    newMessage="Malo";
+  } else {
+    newClass="rating--0";
+    newMessage="Malo";
+  }
+
+  return [newClass, newMessage];
+
+}
+
 function setupResultFor(newDelta){
 
   var resultContainer = document.getElementById('resultP');
+  var resultText = document.getElementById('resultText');
+  var messages = gradeDelta(newDelta);
 
+  console.log(newDelta)
+
+  $('body').removeClass('rating--0');
+  $('body').removeClass('rating--1');
+  $('body').removeClass('rating--2');
+  $('body').removeClass('rating--3');
+  $('body').removeClass('rating--4');
+  $('body').removeClass('rating--5');
+  $('body').removeClass('rating--6');
+  $('body').removeClass('rating--7');
+  $('body').removeClass('rating--8');
+  $('body').removeClass('rating--9');
+
+  $('body').addClass(messages[0]);
+
+  resultText.innerHTML = messages[1];
   resultContainer.innerHTML = newDelta;
 
 }
@@ -75,5 +134,19 @@ $("#btn__restart").click(function(){
   getNewTargetColor()
   changeToState("playing");
 })
+
+$(".result").dblclick(function(){
+
+  if (visualization == 'stars') {
+    $('body').removeClass('result--stars');
+    $('body').addClass('result--number');
+    visualization = 'number';
+  } else {
+    $('body').removeClass('result--number');
+    $('body').addClass('result--stars');
+    visualization = 'stars'
+  }
+
+});
 
 getNewTargetColor()

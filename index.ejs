@@ -15,72 +15,15 @@
 
 		<div id="workarea">
 
-			<div id="mixcontainer">
-
-				<div id="bars">
-					<div class="bar bar--red"></div>
-					<div class="bar bar--green"></div>
-					<div class="bar bar--blue"></div>
-					<div class="bar bar--red"></div>
-					<div class="bar bar--green"></div>
-					<div class="bar bar--blue"></div>
-					<div class="bar bar--red"></div>
-					<div class="bar bar--green"></div>
-					<div class="bar bar--blue"></div>
-					<div class="bar bar--red"></div>
-					<div class="bar bar--green"></div>
-					<div class="bar bar--blue"></div>
-				</div>
-
-			</div>
+			<%- partial('partials/workareas/_rgb') %>
 
 		</div>
 
 		<div id="controls">
 
-			<div id="colorPicker">
+			<%- partial('partials/controls/_rgbpicker') %>
 
-				<div class="control control--red">
-					<input class="control--slider" type="range" name="slider--red" id="slider--red" value="255" min="0" max="255">
-				</div>
-
-				<div class="control control--green">
-					<input class="control--slider" type="range" name="slider--green" id="slider--green" value="255" min="0" max="255">
-				</div>
-
-				<div class="control control--blue">
-					<input class="control--slider" type="range" name="slider--blue" id="slider--blue" value="255" min="0" max="255">
-				</div>
-
-				<div class="control menu">
-					<a href="#" id="btn__new">Nuevo</a>
-					<a href="#" id="btn__compare">Verificar</a>
-				</div>
-
-			</div>
-
-			<div id="colorResult">
-				<h1>Tu resultado:</h1>
-				<p id="resultP">####</p>
-
-				<div id="resultStars">
-          <svg xmlns="http://www.w3.org/2000/svg" width="172" height="30" viewBox="0 0 172 30">
-            <path class="star star--0" d="M16 0c-.234 0-.468.262-.646.787l-3.4 10.043h-.107l-.032.102-10.603.13c-1.108.014-1.288.567-.4 1.23l8.502 6.337-.034.1.087.063-3.153 10.125c-.33 1.058.14 1.4 1.045.76l8.653-6.127.087.065V0z"/>
-            <path class="star star--1" d="M16 0c.234 0 .47.262.646.787l3.4 10.043h.107l.03.102 10.605.13c1.108.014 1.288.567.4 1.23l-8.502 6.337.033.1-.088.063 3.152 10.124c.33 1.058-.14 1.4-1.046.76l-8.654-6.127-.084.065V0z"/>
-            <path class="star star--2" d="M51 0c-.234 0-.47.262-.646.787l-3.4 10.043h-.107l-.03.102-10.605.13c-1.108.014-1.288.567-.4 1.23l8.502 6.337-.033.1.088.063-3.152 10.124c-.33 1.058.14 1.4 1.046.76l8.654-6.127.084.065V0z"/>
-            <path class="star star--3" d="M51 0c.234 0 .47.262.646.787l3.4 10.043h.107l.03.102 10.605.13c1.108.014 1.288.567.4 1.23l-8.502 6.337.033.1-.088.063 3.152 10.124c.33 1.058-.14 1.4-1.046.76l-8.654-6.127-.084.065V0z"/>
-            <path class="star star--4" d="M86 0c-.234 0-.47.262-.646.787l-3.4 10.043h-.107l-.03.102-10.605.13c-1.108.014-1.288.567-.4 1.23l8.502 6.337-.033.1.088.063-3.152 10.124c-.33 1.058.14 1.4 1.046.76l8.654-6.127.084.065V0z"/>
-            <path class="star star--5" d="M86 0c.234 0 .47.262.646.787l3.4 10.043h.107l.03.102 10.605.13c1.108.014 1.288.567.4 1.23l-8.502 6.337.033.1-.088.063 3.152 10.124c.33 1.058-.14 1.4-1.046.76l-8.654-6.127-.084.065V0z"/>
-            <path class="star star--6" d="M121 0c-.234 0-.47.262-.646.787l-3.4 10.043h-.107l-.03.102-10.605.13c-1.108.014-1.288.567-.4 1.23l8.502 6.337-.033.1.088.063-3.152 10.124c-.33 1.058.14 1.4 1.046.76l8.654-6.127.084.065V0z"/>
-            <path class="star star--7" d="M121 0c.234 0 .47.262.646.787l3.4 10.043h.107l.03.102 10.605.13c1.108.014 1.288.567.4 1.23l-8.502 6.337.033.1-.088.063 3.152 10.124c.33 1.058-.14 1.4-1.046.76l-8.654-6.127-.084.065V0z"/>
-            <path class="star star--8" d="M156 0c-.234 0-.47.262-.646.787l-3.4 10.043h-.107l-.03.102-10.605.13c-1.108.014-1.288.567-.4 1.23l8.502 6.337-.033.1.088.063-3.152 10.124c-.33 1.058.14 1.4 1.046.76l8.654-6.127.084.065V0z"/>
-            <path class="star star--9" d="M156 0c.234 0 .47.262.646.787l3.4 10.043h.107l.03.102 10.605.13c1.108.014 1.288.567.4 1.23l-8.502 6.337.033.1-.088.063 3.152 10.124c.33 1.058-.14 1.4-1.046.76l-8.654-6.127-.084.065V0z"/>
-          </svg>
-        </div>
-
-				<a href="#" id="btn__restart">Nuevo color</a>
-				<a href="#" id="btn__retry">Reintentar</a>
-			</div>
+			<%- partial('partials/controls/_results') %>
 
 		</div>
 

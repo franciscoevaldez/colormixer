@@ -1,0 +1,18 @@
+.result{
+
+  &__stars{
+
+    margin: 1em 0;
+
+    & svg{
+      vertical-align: top;
+    }
+
+    & span{
+      margin: 0;
+      padding: 0;
+    }
+
+  }
+
+}

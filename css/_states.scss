@@ -3,26 +3,50 @@
 
   &--playing{
 
-    & div#colorResult{
+    & .result{
       display: none;
     }
 
-    & div#colorPicker{
-      display: block;
+    & .picker{
+      display: flex;
     }
 
   }
 
   &--result{
 
-    & div#colorResult{
+    & .result{
       display: block;
     }
 
-    & div#colorPicker{
+    & .picker{
       display: none;
     }
 
+  }
+
+}
+
+body.result{
+
+  &--stars .result{
+    &__number{
+      display: none;
+    }
+
+    &__stars{
+      display: block;
+    }
+  }
+
+  &--number .result{
+    &__number{
+      display: block;
+    }
+
+    &__stars{
+      display: none;
+    }
   }
 
 }
